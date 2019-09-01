@@ -1,0 +1,14 @@
+body {
+  padding: 50px;
+  font: 13px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.is-invalid {
+  color: #ff4949;
+  padding-left: 7px;
+  font-size: 13px;
+}
+
+input {
+  font-size: 13px !important
+}
