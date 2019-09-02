@@ -13,75 +13,106 @@
   <title>TEST REWARD</title>
 </head>
 <main>
-  <div class="container pt-5">
-    <div class="row">
-      <div class="col-6">
-        <div class="mb-3">
-          <div class="form-group">
-            <label>No. Index</label>
-            <input type="text" class="form-control form-control-sm mb-2" id="reward" disabled readonly />
-          </div>
-          <div class="form-group">
-            <label>Username</label>
-            <input type="text" class="form-control form-control-sm mb-2" id="username" disabled readonly />
-          </div>
-          <div class="form-group">
-            <label>TranferIn</label>
-            <input type="text" class="form-control form-control-sm mb-2" id="tranferIn" disabled readonly />
-          </div>
-          <div class="form-group">
-            <label>TurnOver</label>
-            <input type="text" class="form-control form-control-sm" id="turnOver" disabled readonly />
-          </div>
-        </div>
+  <div class="container pt-3">
+    <form id="random" action="#" method="POST">
+      <div class="text-center">
+        <label>Setting Random</label>
       </div>
-      <div class="col-6">
-        <form id="random" action="#" method="POST">
+      <div class="row">
+        <div class="col-6">
+
+        </div>
+        <div class="col-6">
           <div class="mb-3">
-            <div class="text-center">
-              <label>Setting Random</label>
-            </div>
             <div class="form-group">
-              <label>Type Number</label>
-              <div>
-                <div class="form-check-inline">
-                  <label class="form-check-label" for="radio1">
-                    <input type="radio" class="form-check-input" id="radio1" name="type" value="all" checked>All
-                  </label>
-                </div>
-                <div class="form-check-inline">
-                  <label class="form-check-label" for="radio2">
-                    <input type="radio" class="form-check-input" id="radio2" name="type" value="even">Even Number
-                  </label>
-                </div>
-                <div class="form-check-inline">
-                  <label class="form-check-label" for="radio3">
-                    <input type="radio" class="form-check-input" id="radio3" name="type" value="odd">Odd Number
-                  </label>
-                </div>
-              </div>
+              <label>Amount Money Reward</label>
+              <input type="number" class="form-control form-contro-sm percentage" id="amount" name="amount" />
             </div>
+          </div>
+          <div class="form-group">
+            <label>Max User</label>
+            <input type="number" class="form-control form-contro-sm" id="max" name="max" disabled readonly />
           </div>
           <div class="mb-3">
             <div class="form-group">
               <label>TranferIn</label>
               <input type="number" class="form-control form-contro-sm" id="tranferIn" name="tranferIn" />
             </div>
+            <div class="form-group">
+              <label>TurnOver</label>
+              <input type="number" class="form-control form-contro-sm" id="turnover" name="turnover" />
+            </div>
           </div>
-          <div class="form-group">
-            <label>TurnOver</label>
-            <input type="number" class="form-control form-contro-sm" id="turnover" name="turnover" />
+          <div class="mb-3">
+            <div class="form-group">
+              <label>Percentage Reward</label>
+              <div class="row text-center">
+                <div class="col-4">
+                  <label>Reward L</label>
+                  <input type="number" class="form-control form-contro-sm percentage" id="platinum" name="platinum" />
+                </div>
+                <div class="col-4">
+                  <label>Reward M</label>
+                  <input type="number" class="form-control form-contro-sm percentage" id="gold" name="gold" />
+                </div>
+                <div class="col-4">
+                  <label>Reward S</label>
+                  <input type="number" class="form-control form-contro-sm percentage" id="silver" name="silver" />
+                </div>
+              </div>
+              <div class="text-center mt-3">
+                <label id="percentage-error" class="is-invalid"></label>
+              </div>
+            </div>
+            <!-- <div class="form-group">
+              <label>Min-Max Percentage Reward</label>
+              <div class="form-group">
+                <label>Platinum</label>
+                <div class="row text-center">
+                  <div class="col-6">
+                    <label>Min</label>
+                    <input type="number" class="form-control form-contro-sm" id="platinum-min" name="platinum-min" />
+                  </div>
+                  <div class="col-6">
+                    <label>Max</label>
+                    <input type="number" class="form-control form-contro-sm" id="platinum-max" name="platinum-max" />
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Gold</label>
+                <div class="row text-center">
+                  <div class="col-6">
+                    <label>Min</label>
+                    <input type="number" class="form-control form-contro-sm" id="gold-min" name="gold-min" />
+                  </div>
+                  <div class="col-6">
+                    <label>Max</label>
+                    <input type="number" class="form-control form-contro-sm" id="gold-max" name="gold-max" />
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Silver</label>
+                <div class="row text-center">
+                  <div class="col-6">
+                    <label>Min</label>
+                    <input type="number" class="form-control form-contro-sm" id="silver-min" name="silver-min" />
+                  </div>
+                  <div class="col-6">
+                    <label>Max</label>
+                    <input type="number" class="form-control form-contro-sm" id="silver-max" name="silver-max" />
+                  </div>
+                </div>
+              </div>
+            </div> -->
           </div>
-          <div class="form-group">
-            <label>Max Number</label>
-            <input type="number" class="form-control form-contro-sm" id="max" name="max" />
-          </div>
+
           <div class="text-center">
             <button class="btn btn-sm btn-primary" type="submit">Random</button>
           </div>
-        </form>
-      </div>
-    </div>
+        </div>
+    </form>
   </div>
 </main>
 
@@ -99,6 +130,8 @@
   <script type="text/javascript"
     src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js"></script>
   <script type="text/javascript" src="../json/user.json"></script>
+  <script type="text/javascript" src="../js/script.js"></script>
+  <script type="text/javascript" src="../js/validate.js"></script>
   <script>
     var User = []
     loadJSON()
@@ -115,74 +148,6 @@
       xobj.send(null);
     }
 
-    $('#random').validate({
-      errorClass: 'is-invalid',
-      rules: {
-        'max': {
-          required: !0,
-        },
-        'tranferIn': {
-          required: !0,
-        },
-        'turnover': {
-          required: !0,
-        }
-      },
-      messages: {
-        'max': {
-          required: 'Enter Max',
-        },
-        'tranferIn': {
-          required: 'Enter tranferIn min',
-        },
-        'turnover': {
-          required: 'Enter turnover min',
-        }
-      },
-      submitHandler: function (form) {
-        randomIntFromInterval()
-      }
-    });
-
-    function UserInValidate() {
-      const tranferInMin = $('#tranferIn').val()
-      const turnOverMin = $('#turnover').val()
-      const array = []
-      for (let i in User) {
-        if (tranferInMin < User[i].tranferIn && tranferInMin < User[i].turnOver) {
-          array.push(User[i])
-        }
-      }
-      return { max: array.length, data: array }
-    }
-
-    function randomIntFromInterval() {
-      const min = 0
-      let max = $('#max').val()
-      const type = $('input[name="type"]:checked').val()
-      const count = UserInValidate()
-      max = count.max >= max ? max : count.max
-      const index = Math.floor(Math.random() * (max - min + 1) + min)
-      const checkType = index % 2 == 0 ? true : false
-      if (type == 'all') {
-        Draw(index, User[index], count.max)
-      } else if (type == 'even') {
-        const even = !checkType ? index + 1 > max ? index - 1 : index + 1 : index
-        Draw(even, User[even], count.max)
-      } else if (type == 'odd') {
-        const odd = checkType ? index + 1 > max ? index - 1 : index + 1 : index
-        Draw(odd, User[odd], count.max)
-      }
-    }
-
-    function Draw(index, reward, count) {
-      $('#reward').val(index);
-      $('#max').val(count);
-      $('#username').val(reward.username)
-      $('#tranferIn').val(reward.tranferIn)
-      $('#turnOver').val(reward.turnOver)
-      $('#err-max').text('')
-    }
   </script>
 </body>
 
