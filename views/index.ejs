@@ -13,106 +13,157 @@
   <title>TEST REWARD</title>
 </head>
 <main>
-  <div class="container pt-3">
+  <div class="container pt-3 mb-5">
     <form id="random" action="#" method="POST">
       <div class="text-center">
         <label>Setting Random</label>
       </div>
       <div class="row">
         <div class="col-6">
-
-        </div>
-        <div class="col-6">
           <div class="mb-3">
             <div class="form-group">
               <label>Amount Money Reward</label>
-              <input type="number" class="form-control form-contro-sm percentage" id="amount" name="amount" />
+              <input type="number" class="form-control form-contro-sm amount" id="amount" name="amount" value="10000" />
+            </div>
+          </div>
+          <div class="mb-3">
+            <div class="form-group">
+              <label>transferIn</label>
+              <input type="number" class="form-control form-contro-sm" id="transferIn" name="transferIn" value="100" />
+            </div>
+            <div class="form-group">
+              <label>Winlose</label>
+              <input type="number" class="form-control form-contro-sm" id="winlose" name="winlose" value="100" />
             </div>
           </div>
           <div class="form-group">
             <label>Max User</label>
             <input type="number" class="form-control form-contro-sm" id="max" name="max" disabled readonly />
           </div>
-          <div class="mb-3">
-            <div class="form-group">
-              <label>TranferIn</label>
-              <input type="number" class="form-control form-contro-sm" id="tranferIn" name="tranferIn" />
-            </div>
-            <div class="form-group">
-              <label>TurnOver</label>
-              <input type="number" class="form-control form-contro-sm" id="turnover" name="turnover" />
-            </div>
-          </div>
-          <div class="mb-3">
-            <div class="form-group">
-              <label>Percentage Reward</label>
-              <div class="row text-center">
-                <div class="col-4">
-                  <label>Reward L</label>
-                  <input type="number" class="form-control form-contro-sm percentage" id="platinum" name="platinum" />
-                </div>
-                <div class="col-4">
-                  <label>Reward M</label>
-                  <input type="number" class="form-control form-contro-sm percentage" id="gold" name="gold" />
-                </div>
-                <div class="col-4">
-                  <label>Reward S</label>
-                  <input type="number" class="form-control form-contro-sm percentage" id="silver" name="silver" />
-                </div>
+          <div class="form-group">
+            <label>Percentage Reward</label>
+            <div class="row text-center">
+              <div class="col-4">
+                <label>Reward S</label>
+                <input type="number" class="form-control form-contro-sm percentage" id="silver" name="silver"
+                  value="50" />
               </div>
-              <div class="text-center mt-3">
-                <label id="percentage-error" class="is-invalid"></label>
+              <div class="col-4">
+                <label>Reward M</label>
+                <input type="number" class="form-control form-contro-sm percentage" id="gold" name="gold" value="40">
+              </div>
+              <div class="col-4">
+                <label>Reward L</label>
+                <input type="number" class="form-control form-contro-sm percentage" id="platinum" name="platinum"
+                  value="10" />
               </div>
             </div>
-            <!-- <div class="form-group">
-              <label>Min-Max Percentage Reward</label>
-              <div class="form-group">
-                <label>Platinum</label>
-                <div class="row text-center">
-                  <div class="col-6">
-                    <label>Min</label>
-                    <input type="number" class="form-control form-contro-sm" id="platinum-min" name="platinum-min" />
-                  </div>
-                  <div class="col-6">
-                    <label>Max</label>
-                    <input type="number" class="form-control form-contro-sm" id="platinum-max" name="platinum-max" />
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
-                <label>Gold</label>
-                <div class="row text-center">
-                  <div class="col-6">
-                    <label>Min</label>
-                    <input type="number" class="form-control form-contro-sm" id="gold-min" name="gold-min" />
-                  </div>
-                  <div class="col-6">
-                    <label>Max</label>
-                    <input type="number" class="form-control form-contro-sm" id="gold-max" name="gold-max" />
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
-                <label>Silver</label>
-                <div class="row text-center">
-                  <div class="col-6">
-                    <label>Min</label>
-                    <input type="number" class="form-control form-contro-sm" id="silver-min" name="silver-min" />
-                  </div>
-                  <div class="col-6">
-                    <label>Max</label>
-                    <input type="number" class="form-control form-contro-sm" id="silver-max" name="silver-max" />
-                  </div>
-                </div>
-              </div>
-            </div> -->
-          </div>
-
-          <div class="text-center">
-            <button class="btn btn-sm btn-primary" type="submit">Random</button>
+            <div class="text-center mt-3">
+              <label id="percentage-error" class="is-invalid"></label>
+            </div>
           </div>
         </div>
+        <div class="col-6">
+          <label>Min-Max Percentage Reward</label>
+          <div class="form-group">
+            <label>Reward S <span id="balancS"></span></label>
+            <div class="row text-center">
+              <div class="col-6">
+                <label>Min</label>
+                <input type="number" class="form-control form-contro-sm" id="silver-min" name="silver-min" disabled
+                  readonly />
+              </div>
+              <div class="col-6">
+                <label>Max</label>
+                <input type="number" class="form-control form-contro-sm" id="silver-max" name="silver-max" disabled
+                  readonly />
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Reward M <span id="balancM"></span></label>
+            <div class="row text-center">
+              <div class="col-6">
+                <label>Min</label>
+                <input type="number" class="form-control form-contro-sm" id="gold-min" name="gold-min" disabled
+                  readonly />
+              </div>
+              <div class="col-6">
+                <label>Max</label>
+                <input type="number" class="form-control form-contro-sm" id="gold-max" name="gold-max" disabled
+                  readonly />
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Reward L <span id="balancL"></span></label>
+            <div class="row text-center">
+              <div class="col-6">
+                <label>Min</label>
+                <input type="number" class="form-control form-contro-sm" id="platinum-min" name="platinum-min" disabled
+                  readonly />
+              </div>
+              <div class="col-6">
+                <label>Max</label>
+                <input type="number" class="form-control form-contro-sm" id="platinum-max" name="platinum-max" disabled
+                  readonly />
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Amount User</label>
+            <div class="row text-center">
+              <div class="col-4">
+                <label>User S</label>
+                <input type="number" class="form-control form-contro-sm percentage" id="userS" name="userS" disabled
+                  readonly />
+              </div>
+              <div class="col-4">
+                <label>User M</label>
+                <input type="number" class="form-control form-contro-sm percentage" id="userM" name="userM" disabled
+                  readonly />
+              </div>
+              <div class="col-4">
+                <label>User L</label>
+                <input type="number" class="form-control form-contro-sm percentage" id="userL" name="userL" disabled
+                  readonly />
+              </div>
+            </div>
+            <div class="text-center mt-3">
+              <label id="percentage-error" class="is-invalid"></label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="d-flex">
+          <% for(let i in web){ -%>
+          <div class="form-group col-3">
+            <label><%- web[i]._id %></label>
+            <% for(let x in web[i].data){-%>
+            <div class="form-check mb-1">
+              <label class="form-check-label" for="radio1">
+                <input type="radio" class="form-check-input" id="<%- web[i].data[x]._id %>" name="optradio"
+                  value="<%- web[i].data[x]._id %>" checked><%- web[i].data[x].name %>
+              </label>
+            </div>
+            <% }-%>
+          </div>
+          <% }-%>
+        </div>
+        <div class="text-center">
+          <button class="btn btn-sm btn-primary" type="button" onclick="UserInValidate()">Random</button>
+        </div>
     </form>
+  </div>
+  <div>
+    <div class="d-flex mt-5">
+      <div id="divRewardS" class="col-4"></div>
+      <div id="divRewardM" class="col-4"></div>
+      <div id="divRewardL" class="col-4"></div>
+    </div>
+
+    <!-- <%- include ./result.ejs %> -->
   </div>
 </main>
 
@@ -132,23 +183,6 @@
   <script type="text/javascript" src="../json/user.json"></script>
   <script type="text/javascript" src="../js/script.js"></script>
   <script type="text/javascript" src="../js/validate.js"></script>
-  <script>
-    var User = []
-    loadJSON()
-    function loadJSON() {
-      var xobj = new XMLHttpRequest();
-      xobj.overrideMimeType("application/json");
-      xobj.open('GET', '../json/user.json', true);
-      xobj.onreadystatechange = function () {
-        if (xobj.readyState == 4 && xobj.status == "200") {
-          User = xobj.responseText
-          User = JSON.parse(User)
-        }
-      };
-      xobj.send(null);
-    }
-
-  </script>
 </body>
 
 </html>

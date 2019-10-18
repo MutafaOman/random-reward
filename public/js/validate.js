@@ -4,10 +4,10 @@ $('#random').validate({
         'amount': {
             required: !0,
         },
-        'tranferIn': {
+        'transferIn': {
             required: !0,
         },
-        'turnover': {
+        'winlose': {
             required: !0,
         },
         'platinum': {
@@ -17,24 +17,6 @@ $('#random').validate({
             required: !0,
         },
         'silver': {
-            required: !0,
-        },
-        'platinum-min': {
-            required: !0,
-        },
-        'platinum-max': {
-            required: !0,
-        },
-        'gold-min': {
-            required: !0,
-        },
-        'gold-max': {
-            required: !0,
-        },
-        'silver-min': {
-            required: !0,
-        },
-        'silver-max': {
             required: !0,
         }
     },
@@ -42,11 +24,11 @@ $('#random').validate({
         'amount': {
             required: 'Enter amount',
         },
-        'tranferIn': {
-            required: 'Enter tranferIn min',
+        'transferIn': {
+            required: 'Enter transferIn min',
         },
-        'turnover': {
-            required: 'Enter turnover min',
+        'winlose': {
+            required: 'Enter Winlose min',
         },
         'platinum': {
             required: 'Enter percentage',
@@ -56,27 +38,9 @@ $('#random').validate({
         },
         'silver': {
             required: 'Enter percentage',
-        },
-        'platinum-min': {
-            required: 'Enter Platinum Min',
-        },
-        'platinum-max': {
-            required: 'Enter Platinum Max',
-        },
-        'gold-min': {
-            required: 'Enter Gold Min',
-        },
-        'gold-max': {
-            required: 'Enter Gold Max',
-        },
-        'silver-min': {
-            required: 'Enter Silver Min',
-        },
-        'silver-max': {
-            required: 'Enter Silver Max',
         }
     },
     submitHandler: function (form) {
-        randomIntFromInterval()
+        UserInValidate()
     }
 });
